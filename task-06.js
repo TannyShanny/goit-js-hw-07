@@ -7,11 +7,9 @@ input.addEventListener("blur", () => {
   input.classList.add("invalid");
 
   if (input.getAttribute("data-length") > input.value.length) {
-    input.classList.replace("valid", "invalid");
+    return input.classList.replace("valid", "invalid");
   }
   if (input.getAttribute("data-length") == input.value.length) {
-    input.classList.replace("invalid", "valid");
-  } else {
-    input.classList.replace("valid", "invalid");
-  };
+    return input.classList.replace("invalid", "valid");
+  }
 });
