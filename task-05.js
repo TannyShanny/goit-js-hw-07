@@ -1,7 +1,11 @@
 "use strict";
 
 const input = document.querySelector("#name-input");
-input.addEventListener("input", () => {
-  const span = document.querySelector("#name-output");
-  span.textContent = "" ? "незнакомец" : input.value;
+const output = document.querySelector("#name-output");
+
+input.addEventListener("input", (event) => {
+  output.textContent = event.target.value;
+  if (event.target.value === "") {
+    output.textContent = "незнакомец";
+  }
 });
